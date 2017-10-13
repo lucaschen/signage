@@ -1,6 +1,6 @@
 {
   "name": "signage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "Convert your generic \"numbers\" to signed / unsigned shorts.",
   "main": "src/index.js",

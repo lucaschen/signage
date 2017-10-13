@@ -7,23 +7,25 @@ test("short boundary values are correct", () => {
 });
 
 test("short signed casting is correct", () => {
-  const { cast } = signage.short;
+  const { short } = signage;
 
-  expect(cast(1)).toBe(1);
-  expect(cast(-32767)).toBe(-32767);
-  expect(cast(-32768)).toBe(-32768);
-  expect(cast(32767)).toBe(32767);
-  expect(cast(32768)).toBe(-32768); // wraps
-  expect(cast(32769)).toBe(-32767); // wraps
+  console.log(short(1));
+
+  expect(short(1)).toBe(1);
+  expect(short(-32767)).toBe(-32767);
+  expect(short(-32768)).toBe(-32768);
+  expect(short(32767)).toBe(32767);
+  expect(short(32768)).toBe(-32768); // wraps
+  expect(short(32769)).toBe(-32767); // wraps
 });
 
 test("short unsigned casting is correct", () => {
-  const { cast } = signage.short.unsigned;
+  const { unsigned } = signage.short;
 
-  expect(cast(1)).toBe(1);
-  expect(cast(-1)).toBe(1);
-  expect(cast(-32768)).toBe(32768);
-  expect(cast(65535)).toBe(65535);
-  expect(cast(65536)).toBe(0); // wraps
-  expect(cast(65537)).toBe(1); // wraps
+  expect(unsigned(1)).toBe(1);
+  expect(unsigned(-1)).toBe(1);
+  expect(unsigned(-32768)).toBe(32768);
+  expect(unsigned(65535)).toBe(65535);
+  expect(unsigned(65536)).toBe(0); // wraps
+  expect(unsigned(65537)).toBe(1); // wraps
 });

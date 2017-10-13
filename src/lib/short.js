@@ -1,16 +1,17 @@
-const cast = require("../_helpers/cast");
+const { castSigned, castUnsigned } = require("../_helpers/cast");
 
 const numBits = 16;
 
-const short = {
-  castValue: Math.pow(2, numBits),
-  maxValue: Math.pow(2, numBits - 1) - 1,
-  minValue: 0 - Math.pow(2, numBits - 1)
-};
+const short = (function() {
+  const _short = {};
+  _short.castValue = Math.pow(2, numBits);
+  _short.maxValue = Math.pow(2, numBits - 1) - 1;
+  _short.minValue = 0 - Math.pow(2, numBits - 1);
+  _short.unsigned = castUnsigned.bind(_short);
 
-short.cast = cast(true).bind(short);
-short.unsigned = {
-  cast: cast(false).bind(short)
-};
+  const obj = num => castSigned.call(_short, num);
+
+  return Object.assign(obj, _short);
+})();
 
 module.exports = short;

@@ -1,4 +1,4 @@
-module.exports = _isSigned =>
+const cast = _isSigned =>
   function(num) {
     const isSigned = typeof _isSigned === "undefined" ? true : _isSigned;
 
@@ -30,3 +30,11 @@ module.exports = _isSigned =>
       return withinRange(_mod) ? _mod : _mod - this.castValue;
     }
   };
+
+const castSigned = cast(true);
+const castUnsigned = cast(false);
+
+module.exports = {
+  castSigned,
+  castUnsigned
+};
