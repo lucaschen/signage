@@ -1,0 +1,27 @@
+{
+  "name": "signage",
+  "version": "1.0.0",
+  "description":
+    "Convert your generic \"numbers\" to signed / unsigned shorts.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkroolucas/signage.git"
+  },
+  "files": ["src"],
+  "keywords": [],
+  "author": "Lucas Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parkroolucas/signage/issues"
+  },
+  "devDependencies": {
+    "jest": "~21.2.1"
+  },
+  "engines": {
+    "node": "6.11.2"
+  }
+}
